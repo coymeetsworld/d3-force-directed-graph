@@ -1,6 +1,6 @@
 body {
-	background-color: white;
-	color: black;
+	background-color: black;
+	color: white;
 }
 
 path, line {
@@ -8,11 +8,36 @@ path, line {
 	stroke: black;
 }
 
-#chart {
+#chartContainer {
+	width: 800px;
+	height: 800px;
 	display: block;
 	margin: 0 auto;
-	padding: 100px;
-	margin-bottom: 100px;
-	margin-top: 50px;
+	margin-bottom: 50px;
+	margin-top: 150px;
 	border: 1px solid black;
+	background-color: white;
+	color: black;
 }
+
+#chart .links line {
+  stroke: #999;
+  stroke-opacity: 0.6;
+}
+
+#chart .nodes circle {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+.links line {
+  stroke: #000;
+  stroke-opacity: 0.6;
+	stroke-width: 2;
+}
+
+.nodes circle {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
