@@ -3,13 +3,9 @@ body {
 	color: white;
 }
 
-path, line {
-	fill: none;
-	stroke: black;
-}
 
 #chartContainer {
-	width: 800px;
+	width: 1000px;
 	height: 800px;
 	display: block;
 	margin: 0 auto;
@@ -20,24 +16,20 @@ path, line {
 	color: black;
 }
 
-#chart .links line {
-  stroke: #999;
-  stroke-opacity: 0.6;
-}
 
-#chart .nodes circle {
+line {
   stroke: #fff;
-  stroke-width: 1.5px;
 }
 
-.links line {
-  stroke: #000;
-  stroke-opacity: 0.6;
-	stroke-width: 2;
+.node {
+  pointer-events: all;
 }
 
-.nodes circle {
-  stroke: #fff;
-  stroke-width: 1.5px;
+circle {
+  stroke: none;
+  stroke-width: 40px;
 }
 
+.node text {
+  font: 8px sans-serif;
+}
