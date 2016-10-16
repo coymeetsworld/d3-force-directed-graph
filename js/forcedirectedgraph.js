@@ -19,35 +19,44 @@ d3.json('https://raw.githubusercontent.com/DealPete/forceDirected/master/countri
   
   
   console.log(graph);
-
-  var link = svg.append("g")
-      .attr("class", "links")
-    .selectAll("line")
-    .data(graph.links)
-    .enter().append("line")
-      .attr("class", "link");
-
-  var node = svg.append("g")
-      .attr("class", "nodes")
-    .selectAll("circle")
-    .data(graph.nodes)
-    .enter().append("circle")
-      .attr("r", 5)
-      .attr("class", "node")
-      .call(d3.drag()
-          .on("start", dragstarted)
-          .on("drag", dragged)
-          .on("end", dragended));
-
-  node.append("title")
-      .text(function(d) { return d.country; });
-
   simulation
       .nodes(graph.nodes)
       .on("tick", ticked);
   simulation.force("link")
       .links(graph.links);
+
+  var link = svg.selectAll("line")
+    .data(graph.links)
+    .enter().append("line")
+      .attr("class", "link");
       
+
+  var nodes = svg.selectAll("g.node").data(graph.nodes).enter()
+                        .append("g")
+                        .attr("class", "node");
+  
+  
+  nodes.data(graph.nodes).append("circle")
+      .attr("r", 5)
+      .call(d3.drag()
+          .on("start", dragstarted)
+          .on("drag", dragged)
+          .on("end", dragended));
+   
+    
+  nodes.data(graph.nodes).append("svg:image")
+        .attr("xlink:href",  function(d) { return "images/spidey.png";})
+        .attr("x", function(d) { return -25;})
+        .attr("y", function(d) { return -25;})
+        .attr("height", 50)
+        .attr("width", 50)
+      .call(d3.drag()
+          .on("start", dragstarted)
+          .on("drag", dragged)
+          .on("end", dragended));
+
+
+
 
   function ticked() {
     link
@@ -55,10 +64,14 @@ d3.json('https://raw.githubusercontent.com/DealPete/forceDirected/master/countri
         .attr("y1", function(d) { return d.source.y; })
         .attr("x2", function(d) { return d.target.x; })
         .attr("y2", function(d) { return d.target.y; });
+    
+    
+   nodes.attr("transform", function(d) { 
+       
+     var x = Math.max(radius, Math.min(width - radius, d.x));
+     var y = Math.max(radius, Math.min(height - radius, d.y));
+     return "translate(" + x + "," + y + ")"; });
 
-    node
-       .attr("cx", function(d) { return d.x = Math.max(radius, Math.min(width - radius, d.x)); })
-			  .attr("cy", function(d) { return d.y = Math.max(radius, Math.min(height - radius, d.y)); });
   }
 });
 
