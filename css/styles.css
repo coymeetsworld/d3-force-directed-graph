@@ -1,5 +1,5 @@
-body {
-	background-color: black;
+/*body {
+	/*background-color: black;
 	color: white;
 }
 
@@ -19,6 +19,24 @@ body {
 
 line {
   stroke: #fff;
+}
+
+.node {
+  pointer-events: all;
+}
+
+circle {
+  stroke: none;
+  stroke-width: 40px;
+}
+
+.node text {
+  font: 8px sans-serif;
+}
+*/
+
+    line {
+  stroke: #666;
 }
 
 .node {
