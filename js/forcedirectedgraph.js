@@ -10,8 +10,8 @@ $(document).ready(function() {
     .attr("height", height);
 
   var simulation = d3.forceSimulation()
-    .force("link", d3.forceLink().id(function(d, i) { return i; }))
-    .force("charge", d3.forceManyBody())
+    .force("link", d3.forceLink().id(function(d, i) { return i; }).strength(function() { return 0.2; }))
+    .force("charge", d3.forceManyBody().strength(function () { return -15; }).theta(function() { return 0.2;}))
     .force("center", d3.forceCenter(width / 2, height / 2));
 
 
@@ -22,7 +22,7 @@ $(document).ready(function() {
               .on("tick", ticked);
     simulation.force("link")
               .links(graph.links);
-
+              
     var link = svg.selectAll("line")
                   .data(graph.links)
                   .enter().append("line")
