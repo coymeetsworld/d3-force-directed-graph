@@ -1,10 +1,7 @@
 body {
 	background-color: white;
 	color: orange;
-	width: 1500px;
-	height: 1000px;
 }
-
 
 #chartContainer {
 	width: 1000px;
@@ -28,38 +25,6 @@ body {
 	font-size: 1.1em;
 }
 
-/*
 line {
-  stroke: #fff;
-}
-
-.node {
-  pointer-events: all;
-}
-
-circle {
-  stroke: none;
-  stroke-width: 40px;
-}
-
-.node text {
-  font: 8px sans-serif;
-}
-*/
-
-    line {
-  stroke: #666;
-}
-
-.node {
-  pointer-events: all;
-}
-
-circle {
-  stroke: none;
-  stroke-width: 40px;
-}
-
-.node text {
-  font: 8px sans-serif;
+  stroke: #000;
 }
