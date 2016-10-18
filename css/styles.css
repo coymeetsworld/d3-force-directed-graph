@@ -17,6 +17,17 @@ body {
 	fill: black;
 }
 
+.tip-box {
+	fill: rgba(0,0,0,0.9);	
+	border: 2px solid #fff;
+}
+
+.tip-text {
+	fill: #fff;
+	font-weight: bold;
+	font-size: 1.1em;
+}
+
 /*
 line {
   stroke: #fff;

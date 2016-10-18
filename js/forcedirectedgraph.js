@@ -44,11 +44,35 @@ d3.json('https://raw.githubusercontent.com/DealPete/forceDirected/master/countri
         .attr("y", -10)
         .attr("height", 32)
         .attr("width", 32)
-      .call(d3.drag()
+        .call(d3.drag()
           .on("start", dragstarted)
           .on("drag", dragged)
-          .on("end", dragended));
+          .on("end", dragended))
+        .on("mouseover", function() {
+          var countryObj = d3.select(this).datum();
+          var country = countryObj.country;
+         	var xPos = countryObj.x;
+					var yPos = countryObj.y;
+          
+          svg.append('rect')
+						 .attr('class', 'tip-box')
+						 .attr('x', xPos - 30)
+						.attr('y', yPos - 30)
+						.attr('rx', 3)
+						.attr('ry', 3)
+						.attr('width', (country.length*10)+15)
+						.attr('height', 25);
 
+					svg.append('text')
+						.attr('class','tip-text')
+						.html(country)
+						.attr('x', xPos - 25)
+						.attr('y', yPos - 11);
+        }) 
+      	.on('mouseout', function(d) {
+					 svg.selectAll('.tip-box').remove();
+					 svg.selectAll('.tip-text').remove();
+			 });
 
 
 
