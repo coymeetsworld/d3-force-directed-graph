@@ -5,6 +5,7 @@ $(document).ready(function() {
   var radius=2;
 
   var svg = d3.select("body").append("svg")
+    .attr("id", "chartContainer")
     .attr("width", width)
     .attr("height", height);
 
@@ -36,20 +37,13 @@ d3.json('https://raw.githubusercontent.com/DealPete/forceDirected/master/countri
                         .attr("class", "node");
   
   
-  nodes.data(graph.nodes).append("circle")
-      .attr("r", 5)
-      .call(d3.drag()
-          .on("start", dragstarted)
-          .on("drag", dragged)
-          .on("end", dragended));
-   
     
   nodes.data(graph.nodes).append("svg:image")
-        .attr("xlink:href",  function(d) { return "images/spidey.png";})
-        .attr("x", function(d) { return -25;})
-        .attr("y", function(d) { return -25;})
-        .attr("height", 50)
-        .attr("width", 50)
+        .attr("xlink:href",  function(d) { return "images/flags/" + d.country + ".png";})
+        .attr("x", -10)
+        .attr("y", -10)
+        .attr("height", 32)
+        .attr("width", 32)
       .call(d3.drag()
           .on("start", dragstarted)
           .on("drag", dragged)
@@ -90,5 +84,4 @@ d3.json('https://raw.githubusercontent.com/DealPete/forceDirected/master/countri
 		simulation.unfix(d);
 	}
 
-	
 });

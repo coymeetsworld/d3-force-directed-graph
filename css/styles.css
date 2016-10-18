@@ -1,6 +1,8 @@
-/*body {
-	/*background-color: black;
-	color: white;
+body {
+	background-color: white;
+	color: orange;
+	width: 1500px;
+	height: 1000px;
 }
 
 
@@ -12,11 +14,10 @@
 	margin-bottom: 50px;
 	margin-top: 150px;
 	border: 1px solid black;
-	background-color: white;
-	color: black;
+	fill: black;
 }
 
-
+/*
 line {
   stroke: #fff;
 }
