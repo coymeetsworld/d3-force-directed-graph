@@ -1,0 +1,54 @@
+body {
+  background-color: white;
+  color: black;
+}
+
+h1 {
+  font-size: 2.5em;
+  text-align: center;
+}
+
+#chart-container {
+  border: 1px solid black;
+  display: block;
+  fill: black;
+  height: 800px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  width: 1000px;
+}
+
+.tip-box {
+  border: 2px solid #fff;
+  fill: rgba(0,0,0,0.9); 
+}
+
+.tip-text {
+  fill: #fff;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+line {
+  stroke: #111;
+}
+
+
+/* Link to GitHub */
+#my-about {
+  bottom: 0.5em;
+  right: 3em;
+  font-size: 1em;
+  position: fixed;
+}
+
+a,
+a:visited{
+  font-size: 0.8em;
+  color:#111;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
