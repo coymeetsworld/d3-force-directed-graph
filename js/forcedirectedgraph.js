@@ -49,7 +49,7 @@ d3.json('https://raw.githubusercontent.com/DealPete/forceDirected/master/countri
 
   nodes.data(graph.nodes)
        .append("svg:image")
-       .attr("xlink:href", d => { return "images/flags/" + d.country + ".png"; })
+       .attr("xlink:href", d => { return "imgs/flags/" + d.country + ".png"; })
        .attr("x", -10)
        .attr("y", -10)
        .attr("height", 32)
